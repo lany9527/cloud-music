@@ -1,0 +1,25 @@
+.indicator-wrap {
+  z-index: 99;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  .indicator-item {
+    display: inline-block;
+    width: 18px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px;
+    cursor: pointer;
+    transition: all 1s;
+
+    &:hover {
+      background: #f00;
+    }
+
+    &.indicator-item-selected {
+      background: #f00;
+      width: 36px;
+    }
+  }
+}

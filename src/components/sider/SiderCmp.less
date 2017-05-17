@@ -1,0 +1,66 @@
+@siderColor: #F5F5F7;
+@activeBgColor: #E8E9EC;
+@activeBdColor: #C62F2F;
+@fontColor: #5C5C5C;
+@titleColor: #9F9F9F;
+@sideFontSize: 12px;
+.sider-wrap {
+  width: 200px;
+  height: 936px;
+  background-color: @siderColor;
+  float: left;
+  .recommend {
+    h2 {
+      color: @titleColor;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 32px;
+      padding-left: 10px;
+    }
+    li {
+      list-style: none;
+      height: 35px;
+      line-height: 35px;
+
+      a {
+        text-decoration: none;
+        width: 175px;
+        display: block;
+        padding-left: 25px;
+        color: @fontColor;
+        font-size: @sideFontSize;
+        &:hover {
+          background-color: @activeBgColor;
+          color: #000;
+        }
+        &.active {
+          background-color: @activeBgColor;
+          border-left: 3px solid @activeBdColor;
+          padding-left: 22px;
+          color: #000;
+        }
+      }
+      span {
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        text-align: center;
+        line-height: 18px;
+        font-size: 14px;
+        margin-right: 20px;
+      }
+    }
+    .icon-music:before {
+      content: "\e90e";
+    }
+    .icon-fm:before {
+      content: "\e90d";
+    }
+    .icon-mv:before {
+      content: "\e90c";
+    }
+    .icon-friends:before {
+      content: "\e90b";
+    }
+  }
+}

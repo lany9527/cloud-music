@@ -1,0 +1,25 @@
+.arrows-wrap {
+  .arrow {
+    display: inline-block;
+    color: #fff;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    z-index: 100;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      background: rgba(0,0,0,.2);
+    }
+
+    &.arrow-right {
+      right: 0;
+    }
+    &.arrow-left {
+      left: 0;
+    }
+  }
+}
