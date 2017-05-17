@@ -3,9 +3,9 @@ import React, {Component} from 'react'
 import {Router} from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory';
 
-import HeaderCmp from './components/header/HeaderCmp';
-import SiderCmp from './components/sider/SiderCmp';
-import MainContentCmp from './containers/main-content/MainContentCmp';
+import HeaderCmp from './layouts/header/HeaderCmp';
+import SiderCmp from './layouts/sider/SiderCmp';
+import MainContentCmp from './layouts/main-content/MainContentCmp';
 // import Singer from './components/singer/Singer';
 // import TopList from './components/toplist/TopList';
 // import PlayList from './components/playlist/PlayList';

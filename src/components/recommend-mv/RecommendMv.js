@@ -14,16 +14,19 @@ class RecommendMv extends Component {
         </div>
         <div className="recommend-item-wrap">
           {
-            this.props.songList.map((item, i)=> {
-              return (
-                <div className="recommend-item" key={i}>
-                  <div className="image-wrap">
-                    <span className="has-watch">{item.listened}</span>
-                    <img src={item.pic} alt={item.title}/>
+            this.props.mvList.map((item, i)=> {
+              if(i<3) {
+                return (
+                  <div className="recommend-item" key={i}>
+                    <div className="image-wrap">
+                      <span className="copy-writer">{item.copywriter}</span>
+                      <span className="play-count">{parseInt(item.playCount)}</span>
+                      <img src={item.picUrl} alt={item.title}/>
+                    </div>
+                    <p className="item-title">{item.name}</p>
                   </div>
-                  <p className="item-title">{item.title}</p>
-                </div>
-              )
+                )
+              }
             })
           }
         </div>

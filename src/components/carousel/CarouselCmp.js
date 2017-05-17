@@ -53,8 +53,10 @@ export default class CarouselCmp extends Component {
   }
   render() {
     let len = this.props.items.length;
+
     let indicatorNode = <IndicatorCmp turn={(i)=>{this.slide(i)}} count={len} curIndex={this.state.currentIndex}/>;
     let arrowsNode = <ArrowsCmp turn={(i)=>{this.slide(i)}} />;
+
     return (
       <div className="carousel-wrap"
        onMouseOver={()=>{

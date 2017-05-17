@@ -12,7 +12,7 @@ export default class CarouselItem extends Component {
     // let width = 100/count + '%';
     return (
       <li className="carousel-item">
-        <img src={item.src} alt={item.alt} />
+        <img src={item.pic} alt={item.typeTitle} />
       </li>
     )
   }

@@ -15,16 +15,18 @@ class RecommendSong extends Component {
         <div className="recommend-item-wrap">
           {
             this.props.songList.map((item, i)=> {
-              return (
-                <div className="recommend-item" key={i}>
-                  <div className="image-wrap">
-                    <span className="copy-writer">{item.copywriter}</span>
-                    <span className="play-count">{parseInt(item.playCount)}</span>
-                    <img src={item.picUrl} alt={item.title}/>
+              if(i<5) {
+                return (
+                  <div className="recommend-item" key={i}>
+                    <div className="image-wrap">
+                      <span className="copy-writer">{item.copywriter}</span>
+                      <span className="play-count">{parseInt(item.playCount)}</span>
+                      <img src={item.picUrl} alt={item.title}/>
+                    </div>
+                    <p className="item-title">{item.name}</p>
                   </div>
-                  <p className="item-title">{item.name}</p>
-                </div>
-              )
+                )
+              }
             })
           }
         </div>

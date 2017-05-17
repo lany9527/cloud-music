@@ -4,11 +4,11 @@
 import React, {Component} from 'react';
 // import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {fetchList} from './Recommend.redux';
+import {fetchBanners,fetchSong, fetchMv} from './Recommend.redux';
 
-import CarouselCmp from '../carousel/CarouselCmp';
-import RecommendSong from '../recommend-song/RecommendSong';
-import RecommendMv from '../recommend-mv/RecommendMv';
+import CarouselCmp from '../../components/carousel/CarouselCmp';
+import RecommendSong from '../../components/recommend-song/RecommendSong';
+import RecommendMv from '../../components/recommend-mv/RecommendMv';
 
 class RecommendCmp extends Component {
   state = {
@@ -89,8 +89,10 @@ class RecommendCmp extends Component {
   };
   
   componentDidMount() {
-    this.props.onFetchList();
-    console.log("RecommendCmp -- componentDidMount")
+    this.props.onFetchSong();
+    this.props.onFetchMv();
+    this.props.onFetchBanners();
+    console.log("RecommendCmp -- componentDidMount===>"+this.props);
     
   }
   render() {
@@ -98,7 +100,7 @@ class RecommendCmp extends Component {
     return (
       <div className="recommend">
         <CarouselCmp
-          items={this.state.images}
+          items={this.props.banners}
           speed={1.2}
           delay={2}
           pause={true}
@@ -106,26 +108,30 @@ class RecommendCmp extends Component {
           indicator={true}
           arrows={true}
           width={764}/>
-        <RecommendSong songList={this.props.list}/>
-        <RecommendMv songList={this.state.mvList}/>
-        <RecommendMv songList={this.state.mvList}/>
-        <RecommendMv songList={this.state.mvList}/>
+        <RecommendSong songList={this.props.song}/>
+        <RecommendMv mvList={this.props.mv}/>
+        {/*<RecommendMv songList={this.state.mvList}/>*/}
+        {/*<RecommendMv songList={this.state.mvList}/>*/}
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  console.log("mapStateToProps==>",state.recommendList);
+  console.log("mapStateToProps==>",state);
   return {
-    list: state.recommendList.list
+    song: state.recommendSong.song,
+    mv: state.recommendMv.mv,
+    banners: state.bannersReducer.banners
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   console.log("mapDispatchToProps");
   return {
-    onFetchList: () => dispatch(fetchList)
+    onFetchSong: () => dispatch(fetchSong),
+    onFetchMv: () => dispatch(fetchMv),
+    onFetchBanners: () => dispatch(fetchBanners)
   }
 };
 

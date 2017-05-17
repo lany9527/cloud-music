@@ -7,12 +7,12 @@ import { Route} from 'react-router-dom'
 import './MainContentCmp.less';
 import NavTabCmp from '../../components/nav-tab/NavTabCmp'
 
-import Recommend from '../../components/recommend/Recommend';
-import Singer from '../../components/singer/Singer';
-import TopList from '../../components/toplist/TopList';
-import PlayList from '../../components/playlist/PlayList';
-import Dj from '../../components/dj/Dj';
-import LatestMusic from '../../components/latest-music/LatestMusic';
+import Recommend from '../../views/recommend/Recommend';
+import Singer from '../../views/singer/Singer';
+import TopList from '../../views/toplist/TopList';
+import PlayList from '../../views/playlist/PlayList';
+import Dj from '../../views/dj/Dj';
+import LatestMusic from '../../views/latest-music/LatestMusic';
 
 export default class MainContentCmp extends Component {
   state = {
