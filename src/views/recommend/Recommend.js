@@ -90,13 +90,13 @@ class RecommendCmp extends Component {
   
   componentDidMount() {
     this.props.onFetchSong();
-    this.props.onFetchMv();
-    this.props.onFetchBanners();
-    console.log("RecommendCmp -- componentDidMount===>"+this.props);
+    // this.props.onFetchMv();
+    // this.props.onFetchBanners();
+    // console.log("RecommendCmp -- componentDidMount===>"+this.props);
     
   }
   render() {
-    console.log("render",this.props);
+    // console.log("render",this.props);
     return (
       <div className="recommend">
         <CarouselCmp
@@ -118,7 +118,7 @@ class RecommendCmp extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("mapStateToProps==>",state);
+  // console.log("mapStateToProps==>",state);
   return {
     song: state.recommendSong.song,
     mv: state.recommendMv.mv,
@@ -127,7 +127,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  console.log("mapDispatchToProps");
+  // console.log("mapDispatchToProps");
   return {
     onFetchSong: () => dispatch(fetchSong),
     onFetchMv: () => dispatch(fetchMv),

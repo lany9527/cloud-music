@@ -1,0 +1,202 @@
+@var1: #ffffff;
+@var2: #666666;
+@var3: #333333;
+.modal,
+.modal-mask {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    /* -- mask -- */
+    .modal-mask {
+        position: absolute;
+        background: rgba(0, 0, 0, .3);
+    }
+    /* -- dialog -- */
+    .modal-dialog {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 101;
+        padding: 15px;
+        background: #fff;
+        border-radius: 3px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    }
+    /* -- close button -- */
+    .modal-close {
+        position: absolute;
+        cursor: pointer;
+        top: 16px;
+        right: 16px;
+        width: 16px;
+        height: 16px;
+    }
+    .modal-close:before,
+    .modal-close:after {
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        margin-top: -1px;
+        background: #666;
+        border-radius: 100%;
+        -webkit-transition: background .2s;
+        transition: background .2s;
+    }
+    .modal-close:before {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    .modal-close:after {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    .modal-close:hover:before,
+    .modal-close:hover:after {
+        background: #333;
+    }
+    /* -- fade -- */
+    @-webkit-keyframes modal-fade-enter {
+        from {
+            opacity: 0;
+        }
+    }
+    @keyframes modal-fade-enter {
+        from {
+            opacity: 0;
+        }
+    }
+    .modal-fade-enter {
+        -webkit-animation: modal-fade-enter both ease-in;
+        animation: modal-fade-enter both ease-in;
+    }
+    @-webkit-keyframes modal-fade-leave {
+        to {
+            opacity: 0
+        }
+    }
+    @keyframes modal-fade-leave {
+        to {
+            opacity: 0
+        }
+    }
+    .modal-fade-leave {
+        -webkit-animation: modal-fade-leave both ease-out;
+        animation: modal-fade-leave both ease-out;
+    }
+    /* -- zoom -- */
+    &-close:before,
+    &-close:after {
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        margin-top: -1px;
+        background: @var2;
+        border-radius: 100%;
+        -webkit-transition: background .2s;
+        transition: background .2s;
+    }
+    &-close:hover:before,
+    &-close:hover:after {
+        background: @var3;
+    }
+}
+
+.modal {
+    position: fixed;
+    &-mask {
+        position: absolute;
+        background: rgba(0, 0, 0, .3);
+    }
+    &-dialog {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 101;
+        padding: 15px;
+        background: @var1;
+        border-radius: 3px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    }
+    &-close {
+        position: absolute;
+        cursor: pointer;
+        top: 16px;
+        right: 16px;
+        width: 16px;
+        height: 16px;
+        &:before {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        &:after {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+    }
+    &-fade-enter {
+        -webkit-animation: modal-fade-enter both ease-in;
+        animation: modal-fade-enter both ease-in;
+    }
+    &-fade-leave {
+        -webkit-animation: modal-fade-leave both ease-out;
+        animation: modal-fade-leave both ease-out;
+    }
+    &-zoom-enter {
+        -webkit-animation: modal-zoom-enter both cubic-bezier(0.4, 0, 0, 1.5);
+        animation: modal-zoom-enter both cubic-bezier(0.4, 0, 0, 1.5);
+    }
+    &-zoom-leave {
+        -webkit-animation: modal-zoom-leave both;
+        animation: modal-zoom-leave both;
+    }
+}
+
+-webkit-keyframes modal-fade-enter {
+    opacity: 0;
+}
+
+keyframes modal-fade-enter {
+    opacity: 0;
+}
+
+-webkit-keyframes modal-fade-leave {
+    opacity: 0;
+}
+
+keyframes modal-fade-leave {
+    opacity: 0;
+}
+
+-webkit-keyframes modal-zoom-enter {
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+}
+
+keyframes modal-zoom-enter {
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+}
+
+-webkit-keyframes modal-zoom-leave {
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+}
+
+keyframes modal-zoom-leave {
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+}

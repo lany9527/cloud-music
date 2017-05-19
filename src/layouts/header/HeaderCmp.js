@@ -1,10 +1,30 @@
 /**
  * Created by littlestone on 17-5-6.
  */
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './HeaderCmp.less';
 
+import Modal from '../../components/modal/Modal';
+import LoginForm from '../../components/login-form/LoginForm';
 class HeaderCmp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: false,
+      animation: 'zoom'
+    }
+  }
+  show(animation) {
+    this.setState({animation, visible: true});
+  }
+
+  hide() {
+    this.setState({visible: false});
+  }
+  onLogin(userInfo){
+    console.log("header get userInfo--->",userInfo);
+  }
+
   render() {
     return (
       <div className="nav-wrap">
@@ -21,7 +41,9 @@ class HeaderCmp extends Component {
         </div>
         <div className="nav-user">
           <span className="icon-user"></span>
-          未登录
+          <a
+            className="login-btn"
+            onClick={this.show.bind(this, 'zoom')}>未登录</a>
         </div>
         <div className="nav-function">
           <div className="skin">
@@ -34,6 +56,20 @@ class HeaderCmp extends Component {
             <span className="icon-setting"></span>
           </div>
         </div>
+        {/**
+            modal
+      */}
+        <Modal
+          visible={this.state.visible}
+          onClose={this.hide.bind(this)}
+          duration={600}
+          width={360}
+          height={220}
+          animation={this.state.animation}>
+
+          <LoginForm login={(userInfo)=>{this.onLogin(userInfo)}} />
+
+        </Modal>
       </div>
     );
   }

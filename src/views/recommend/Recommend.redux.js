@@ -1,5 +1,7 @@
 import axios from 'axios';
 const apiUrl = 'http://localhost:8080/';
+
+
 /**
  * constant 部分
  */
@@ -61,12 +63,10 @@ export const receiveList = (song) => {
 }
 
 export const fetchSong = dispatch => {
-  dispatch(requestList());
-  return axios
-    .get(apiUrl + 'personalized')
-    .then(res => res.data.result)
-    .then(res => dispatch(receiveList(res)))
-    .then(res => console.log('%c "请求结果==》"', 'color: #f00' + res))
+  // dispatch(requestList());
+  return axios.get(apiUrl + 'recommend/resource?uid=479373404',{withCredentials:true})
+    .then(res => console.log('%c fetchSong==>','background:#666;color:#FFD100',res));
+    // .then(res => dispatch(receiveList(res)))
 };
 
 ////////////// 推荐MV ////////////////
@@ -86,7 +86,6 @@ export const fetchMv = dispatch => {
     .get(apiUrl + 'personalized/mv')
     .then(res => res.data.result)
     .then(res => dispatch(receiveMv(res)))
-    .then(res => console.log('%c "Mv请求结果==》"', 'color: #f00' + res))
 };
 
 /**
