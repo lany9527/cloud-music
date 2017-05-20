@@ -64,9 +64,9 @@ export const receiveList = (song) => {
 
 export const fetchSong = dispatch => {
   // dispatch(requestList());
-  return axios.get(apiUrl + 'recommend/resource?uid=479373404',{withCredentials:true})
-    .then(res => console.log('%c fetchSong==>','background:#666;color:#FFD100',res));
-    // .then(res => dispatch(receiveList(res)))
+  return axios.get(apiUrl + 'personalized')    
+    .then(res => dispatch(receiveList(res.data.result)))
+    .then(res => console.log('%c fetchSong==>','background:#666;color:#FFD100',res))
 };
 
 ////////////// 推荐MV ////////////////

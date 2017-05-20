@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './LoginForm.less';
 
-import {connect} from 'react-redux'
 import {onLogin} from './LoginFormRedux'
 
 class LoginForm extends Component {
@@ -27,7 +26,6 @@ class LoginForm extends Component {
     console.log('用户信息: ' + this.state.username, this.state.password);
     this.props.login(this.state);
     event.preventDefault();
-    this.props.onLogin(this.state);
   }
   render() {
     return (
@@ -45,15 +43,5 @@ class LoginForm extends Component {
   }
 
 }
-  const mapStateToProps = state => {
-    return {
-      userInfo: state.userInfo
-    }
-  }
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onLogin: (user) => dispatch(onLogin(user))
-  }
-}
 
-export default connect(mapStateToProps,mapDispatchToProps)(LoginForm)
+export default LoginForm;

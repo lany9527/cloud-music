@@ -90,13 +90,13 @@ class RecommendCmp extends Component {
   
   componentDidMount() {
     this.props.onFetchSong();
-    // this.props.onFetchMv();
-    // this.props.onFetchBanners();
+    this.props.onFetchMv();
+    this.props.onFetchBanners();
     // console.log("RecommendCmp -- componentDidMount===>"+this.props);
     
   }
   render() {
-    // console.log("render",this.props);
+    console.log("RecommendCmp render",this.props);
     return (
       <div className="recommend">
         <CarouselCmp

@@ -3,7 +3,8 @@
  */
 import React, {Component} from 'react';
 import './HeaderCmp.less';
-
+import {connect} from 'react-redux'
+import {onLogin} from '../../components/login-form/LoginFormRedux';
 import Modal from '../../components/modal/Modal';
 import LoginForm from '../../components/login-form/LoginForm';
 class HeaderCmp extends Component {
@@ -26,6 +27,7 @@ class HeaderCmp extends Component {
   }
 
   render() {
+    // console.log("heafer render==>",this.props,this.state);
     return (
       <div className="nav-wrap">
         <div className="nav-title">
@@ -67,12 +69,20 @@ class HeaderCmp extends Component {
           height={220}
           animation={this.state.animation}>
 
-          <LoginForm login={(userInfo)=>{this.onLogin(userInfo)}} />
+          <LoginForm login={this.props.onLogin} />
 
         </Modal>
       </div>
     );
   }
 }
+const mapStateToProps = state => {
+  return {userInfo: state.userInfo}
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onLogin: (user) => dispatch(onLogin(user))
+  }
+}
 
-export default HeaderCmp;
+export default  connect(mapStateToProps,mapDispatchToProps)(HeaderCmp);
