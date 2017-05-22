@@ -1,0 +1,36 @@
+@itemBorderColor:rgb(237,237,237);
+@shadowColor: rgb(245,245,247);
+@hoverColor: rgb(235,236,237);
+.latest-music-list {
+  width: 382px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #5C5C5C;
+}
+.pull-left {
+  width: 382px;
+  box-sizing: border-box;
+  float: left;
+  border: 1px solid @itemBorderColor;
+  border-right: none;
+  .left-shadow {
+    background-color: @shadowColor;
+    &:hover {
+      background-color: @hoverColor;
+    }
+  }
+}
+.pull-right {
+  width: 382px;
+  box-sizing: border-box;
+  float: right;
+  border: 1px solid @itemBorderColor;
+  .right-shadow {
+    background-color: @shadowColor;
+    &:hover {
+      background-color: @hoverColor;
+    }
+  }
+}

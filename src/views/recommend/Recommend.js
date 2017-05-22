@@ -9,7 +9,7 @@ import {fetchBanners,fetchSong, fetchMv} from './Recommend.redux';
 import CarouselCmp from '../../components/carousel/CarouselCmp';
 import RecommendSong from '../../components/recommend-song/RecommendSong';
 import RecommendMv from '../../components/recommend-mv/RecommendMv';
-
+import LatestMusicList from '../../components/latest-music-list/LatestMusicList';
 class RecommendCmp extends Component {
   state = {
     images: [
@@ -89,9 +89,9 @@ class RecommendCmp extends Component {
   };
   
   componentDidMount() {
-    this.props.onFetchSong();
-    this.props.onFetchMv();
-    this.props.onFetchBanners();
+    // this.props.onFetchSong();
+    // this.props.onFetchMv();
+    // this.props.onFetchBanners();
     // console.log("RecommendCmp -- componentDidMount===>"+this.props);
     
   }
@@ -110,8 +110,7 @@ class RecommendCmp extends Component {
           width={764}/>
         <RecommendSong songList={this.props.song}/>
         <RecommendMv mvList={this.props.mv}/>
-        {/*<RecommendMv songList={this.state.mvList}/>*/}
-        {/*<RecommendMv songList={this.state.mvList}/>*/}
+        <LatestMusicList />
       </div>
     )
   }
