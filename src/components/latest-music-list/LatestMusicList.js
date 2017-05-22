@@ -19,7 +19,11 @@ class LatestMusicList extends Component {
     const len = latestSongs.length;
     if(len > 0) {
       return (
-        <div>
+        <div className="latest-music-list">
+          <div className="title">
+            <h2>最新音乐</h2>
+            <span><a href="">更多 ></a></span>
+          </div>
         <div className="list-left pull-left">
           {latestSongs.map((item,i)=>{
             if(i<5){
