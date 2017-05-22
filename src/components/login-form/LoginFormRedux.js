@@ -27,9 +27,9 @@ export const onLogin = (user) => (dispatch) => {
   dispatch(loginStart())
   return (
   axios
-    .get(apiUrl + `login/cellphone?phone=${user.username}&password=${user.password}`)
-    // .then(res => console.log("登陆成功-->", res.data))
-    .then(res => dispatch(loginSuccess(res.data.profile)))
+    .get(apiUrl + `login/cellphone?phone=${user.username}&password=${user.password}`)    
+    // .then(res => dispatch(loginSuccess(res.data.profile)))
+    .then(res => console.log("登陆成功-->", res))
     // .catch(err => dispatch(loginFailed(err)))
   )
 };

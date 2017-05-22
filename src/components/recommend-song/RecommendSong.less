@@ -50,6 +50,8 @@
                 width: 40px;
                 text-align: center;
                 background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+                opacity: 1;
+                transition: opacity 0.5s;
             }
             .copy-writer {
                 position: absolute;
@@ -71,6 +73,10 @@
             &:hover {
                 .copy-writer {
                     transform: translateY(0);
+                }
+                .play-count {
+                    opacity: 0;
+
                 }
             }
             img {

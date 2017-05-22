@@ -96,7 +96,7 @@ class RecommendCmp extends Component {
     
   }
   render() {
-    console.log("RecommendCmp render",this.props);
+    // console.log("RecommendCmp render",this.props);
     return (
       <div className="recommend">
         <CarouselCmp

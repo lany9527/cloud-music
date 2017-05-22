@@ -64,9 +64,16 @@ export const receiveList = (song) => {
 
 export const fetchSong = dispatch => {
   // dispatch(requestList());
-  return axios.get(apiUrl + 'personalized')    
-    .then(res => dispatch(receiveList(res.data.result)))
-    .then(res => console.log('%c fetchSong==>','background:#666;color:#FFD100',res))
+  return axios.get(apiUrl + 'recommend/resource?uid=479373404',{withCredentials:true})  
+    // .then(res => dispatch(receiveList(res.data.recommend)))
+    .then(res => {
+      axios.get(apiUrl + 'personalized').then(_res => {
+        // console.log("不带cookie==》",_res.data.result);
+        // console.log("带cookie==》",res.data.recommend);
+        const songLis = [..._res.data.result, ...res.data.recommend];
+        dispatch(receiveList(songLis))
+      })
+    })
 };
 
 ////////////// 推荐MV ////////////////
