@@ -112,3 +112,14 @@ export default class MainContentCmp extends Component {
     )
   }
 }
+/**
+ * <NavTabCmp/>
+              <div>
+                <Route exact path="/" component={Recommend}/>
+                <Route path="/playlist" component={PlayList}/>
+                <Route path="/dj" component={Dj}/>
+                <Route path="/toplist" component={TopList}/>
+                <Route path="/singer" component={Singer}/>
+                <Route path="/latestmusic" component={LatestMusic}/>
+              </div>
+ */ 

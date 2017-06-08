@@ -89,9 +89,9 @@ class RecommendCmp extends Component {
   };
   
   componentDidMount() {
-    // this.props.onFetchSong();
-    // this.props.onFetchMv();
-    // this.props.onFetchBanners();
+    this.props.onFetchSong();
+    this.props.onFetchMv();
+    this.props.onFetchBanners();
     // console.log("RecommendCmp -- componentDidMount===>"+this.props);
     
   }

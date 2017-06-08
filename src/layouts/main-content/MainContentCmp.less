@@ -1,41 +1,43 @@
 @borderColor: #E9E9EA;
 @contentCOlor: #FAFAFA;
 .main-content {
-  float: left;
-  width: 764px;
-  height: 936px;
-  padding: 0 30px 0 30px;
-  border-left: 1px solid @borderColor;
-  background-color: @contentCOlor;
-  //overflow: scroll;
+    float: left;
+    width: 764px;
+    height: 936px;
+    padding: 0 30px 0 30px;
+    border-left: 1px solid @borderColor;
+    background-color: @contentCOlor;
 }
 
 /////////////////////////////////
-.outer-container{
-  width: 764px;
-  height: 936px;
-  padding: 0 30px 0 30px;
-  border-left: 1px solid @borderColor;
-  background-color: @contentCOlor;
+.outer-container {
+    position: relative;
+    left: 200px;
+    overflow: hidden;
+    background-color: goldenrod;
+    width: 764px;
+    height: 936px;
+    padding: 0 30px 0 30px;
+    border-left: 1px solid @borderColor;
+    background-color: @contentCOlor;
+}
+
+.inner-container {
+    position: absolute;
+    left: 30px;
+    height: 936px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .content {
-  //width: 200px; height: 200px;
-  width: 764px;
-  height: 936px;
-}
-.outer-container {
-  position: relative;
-  overflow: hidden;
-}
-.inner-container {
-  position: absolute;
-  left: 30px;
-  overflow-x: hidden;
-  overflow-y: scroll;
+    width: 764px;
+    // height: 2936px;
 }
 
+
 /* for Chrome */
+
 .inner-container::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
