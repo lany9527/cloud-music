@@ -1,32 +1,33 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 // import Reddit from './containers/Reddit/Reddit';
-import {Router} from 'react-router-dom'
-import createBrowserHistory from 'history/createBrowserHistory';
+import { Router, Route } from "react-router-dom";
+import createBrowserHistory from "history/createBrowserHistory";
 
-import HeaderCmp from './layouts/header/HeaderCmp';
-import SiderCmp from './layouts/sider/SiderCmp';
-import MainContentCmp from './layouts/main-content/MainContentCmp';
+import HeaderCmp from "./layouts/header/HeaderCmp";
+import SiderCmp from "./layouts/sider/SiderCmp";
+import MainContentCmp from "./layouts/main-content/MainContentCmp";
 // import Singer from './components/singer/Singer';
 // import TopList from './components/toplist/TopList';
 // import PlayList from './components/playlist/PlayList';
 // import Dj from './components/dj/Dj';
 // import LatestMusic from './components/latest-music/LatestMusic';
 
-
-import './App.less';
+import "./App.less";
 const history = createBrowserHistory();
 
 class App extends Component {
   render() {
     return (
       <div className="app-wrap">
-        <HeaderCmp/>
-        <SiderCmp/>
+        <HeaderCmp />
         <Router history={history}>
-          <MainContentCmp />
+          <div>
+            <SiderCmp />
+            <MainContentCmp />
+          </div>
         </Router>
       </div>
-    )
+    );
   }
 }
 

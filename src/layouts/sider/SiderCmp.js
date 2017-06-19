@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import './SiderCmp.less';
-
+import { NavLink } from 'react-router-dom'
 
 class SiderCmp extends Component {
   render() {
@@ -13,52 +13,52 @@ class SiderCmp extends Component {
           <h2>推荐</h2>
           <ul>
             <li>
-              <a className="active">
+              <NavLink to="/" className="active">
                 <span className="icon-music"></span>
                 发现音乐
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="">
+              <NavLink to="/" href="">
                 <span className="icon-fm"></span>
                 私人FM
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="">
+              <NavLink to="/" href="">
                 <span className="icon-mv"></span>
                 MV
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="">
+              <NavLink to="/" href="">
                 <span className="icon-friends"></span>
                 朋友
-              </a>
+              </NavLink>
             </li>
           </ul>
           <h2>我的音乐</h2>
           <ul>
             <li>
-              <a href="">
+              <NavLink to="/" href="">
                 <span className="icon-music"></span>
                 本地音乐
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="">
+              <NavLink to="/" href="">
                 <span className="icon-fm"></span>
                 下载管理
-              </a>
+              </NavLink>
             </li>
           </ul>
           <h2>创建的歌单</h2>
           <ul>
             <li>
-              <a href="">
+              <NavLink to="/" href="">
                 <span className="icon-music"></span>
                 我喜欢的音乐
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>

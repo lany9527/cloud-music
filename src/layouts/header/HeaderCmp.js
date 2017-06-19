@@ -24,11 +24,16 @@ class HeaderCmp extends Component {
   }
 
   show(animation) {
-    this.setState({animation, visible: true});
+    this.setState({
+      animation,
+      visible: true
+    });
   }
 
   hide() {
-    this.setState({visible: false});
+    this.setState({
+      visible: false
+    });
   }
 
   onLogin(userInfo) {
@@ -67,7 +72,8 @@ class HeaderCmp extends Component {
                height={ 220 }
                animation={ this.state.animation }>
           <LoginForm login={ this.props.onLogin }/>
-        </Modal></div>
+        </Modal>
+        </div>
     );
   }
 }
